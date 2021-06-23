@@ -22,5 +22,17 @@ int main()
     std::cout << "+ The codes add-up to: " << sum << std::endl;
     std::cout << "+ The codes multiply to give: " << product << std::endl;
 
+    //Get users guess
+    int GuessA, GuessB, GuessC;
+    std::cin >> GuessA >> GuessB >> GuessC;
+    std::cout << GuessC;
+
+    int GuessSum = GuessA + GuessB + GuessC;
+    int GuessProduct = GuessA * GuessB * GuessC;
+
+    if (GuessSum == sum && GuessProduct == product) {
+        std::cout << "You win" << std::endl;
+    }
+
     return 0;
 }
