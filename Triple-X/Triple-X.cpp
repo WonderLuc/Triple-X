@@ -3,12 +3,22 @@
 
 #include <iostream>
 
+void print(std::string str)
+{
+    std::cout << str;
+}
+
+void print(int number)
+{
+    std::cout << number;
+}
+
 int main()
 {
     // Print Welcome message 
-    std::cout << "You are a secret agent breaking into a secure server room\n";
-    std::cout << "You need to enter the correct codes to continue...\n";
-
+    print("You are a secret agent breaking into a secure server room\n");
+    print("You need to enter the correct codes to continue...\n");
+   
     const int CodeA = 4;
     const int CodeB = 5;
     const int CodeC = 5;
@@ -17,17 +27,21 @@ int main()
     const int product = CodeA * CodeB * CodeC;
 
     // Print statment
-    std::cout << std::endl;
-    std::cout << "+ There are 3 numbers in the code" << std::endl;
-    std::cout << "+ The codes add-up to: " << sum << std::endl;
-    std::cout << "+ The codes multiply to give: " << product << std::endl;
+    print("\n");
+    print("+ There are 3 numbers in the code\n");
+    print("+ The codes add-up to: ");
+    print(sum);
+    print("\n");
+    print("+ The codes multiply to give: ");
+    print(product);
+    print("\n");
 
     //Get users guess
     int GuessA, GuessB, GuessC, GuessSum, GuessProduct;
     
     int tries = 3;
     while (true) {    
-        std::cout << std::endl;
+        print("\n");
         std::cin >> GuessA >> GuessB >> GuessC;
 
         // Game wins decision
@@ -35,16 +49,18 @@ int main()
         GuessProduct = GuessA * GuessB * GuessC;
 
         if (GuessSum == sum && GuessProduct == product) {
-            std::cout << "You win" << std::endl;
+            print("You win");
             break;
         }
-        std::cout << "You code is wrong" << std::endl;
+        print("Your code wrong\n");
         tries--;
         if (tries <= 0) {
-            std::cout << "You was catched.... \nGAME OVER" << std::endl;
+            print("You was catched.... \nGAME OVER\n");
             break;
         }
-        std::cout << "Tries left - " << tries << std::endl;
+        print("Tries left - ");
+        print(tries);
+        print("\n");
     }
 
 
