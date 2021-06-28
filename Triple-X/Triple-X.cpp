@@ -23,16 +23,30 @@ int main()
     std::cout << "+ The codes multiply to give: " << product << std::endl;
 
     //Get users guess
-    int GuessA, GuessB, GuessC;
-    std::cin >> GuessA >> GuessB >> GuessC;
-    std::cout << GuessC;
+    int GuessA, GuessB, GuessC, GuessSum, GuessProduct;
+    
+    int tries = 3;
+    while (true) {    
+        std::cout << std::endl;
+        std::cin >> GuessA >> GuessB >> GuessC;
 
-    int GuessSum = GuessA + GuessB + GuessC;
-    int GuessProduct = GuessA * GuessB * GuessC;
+        // Game wins decision
+        GuessSum = GuessA + GuessB + GuessC;
+        GuessProduct = GuessA * GuessB * GuessC;
 
-    if (GuessSum == sum && GuessProduct == product) {
-        std::cout << "You win" << std::endl;
+        if (GuessSum == sum && GuessProduct == product) {
+            std::cout << "You win" << std::endl;
+            break;
+        }
+        std::cout << "You code is wrong" << std::endl;
+        tries--;
+        if (tries <= 0) {
+            std::cout << "You was catched.... \nGAME OVER" << std::endl;
+            break;
+        }
+        std::cout << "Tries left - " << tries << std::endl;
     }
+
 
     return 0;
 }
