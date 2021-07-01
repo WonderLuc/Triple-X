@@ -32,13 +32,14 @@ void printRules(int sum, int product)
     print(product);
     print("\n");
 }
+
 bool playGame(int difficulty)
 {
     printWelcome(difficulty);
 
-    const int CodeA = 4 * difficulty;
-    const int CodeB = 5;
-    const int CodeC = 5;
+    const int CodeA = rand() % difficulty + difficulty;
+    const int CodeB = rand() % difficulty + difficulty;
+    const int CodeC = rand() % difficulty + difficulty;
 
     const int sum = CodeA + CodeB + CodeC;
     const int product = CodeA * CodeB * CodeC;
@@ -86,6 +87,5 @@ int main()
         }
         print("\n******************************\n");
     }
-    
     return 0;
 }
