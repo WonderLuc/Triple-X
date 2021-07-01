@@ -12,17 +12,19 @@ void print(int number)
 {
     std::cout << number;
 }
-
-int main()
+void printWelcome()
 {
-    // Print Welcome message 
     print("You are a secret agent breaking into a secure server room\n");
     print("You need to enter the correct codes to continue...\n");
-   
+}
+void playGame()
+{
+    printWelcome();
+
     const int CodeA = 4;
     const int CodeB = 5;
     const int CodeC = 5;
-    
+
     const int sum = CodeA + CodeB + CodeC;
     const int product = CodeA * CodeB * CodeC;
 
@@ -38,9 +40,9 @@ int main()
 
     //Get users guess
     int GuessA, GuessB, GuessC, GuessSum, GuessProduct;
-    
+
     int tries = 3;
-    while (true) {    
+    while (true) {
         print("\n");
         std::cin >> GuessA >> GuessB >> GuessC;
 
@@ -64,5 +66,9 @@ int main()
     }
 
 
+}
+int main()
+{
+    playGame();
     return 0;
 }
